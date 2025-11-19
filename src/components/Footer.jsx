@@ -5,7 +5,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 ">
+    <footer className="footer sm:footer-horizontal text-base-content p-10 border-t border-green-200">
       <aside className="">
         <img className="h-10" src={logo} alt="" />
         <h3 className="font-semibold">A Local Skill Exchange Platform</h3>
