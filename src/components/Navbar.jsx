@@ -46,10 +46,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link
-          to={"/"}
-          className=" text-xl font-bold text-[#3DB66F]"
-        >
+        <Link to={"/"} className=" text-xl font-bold text-[#3DB66F]">
           SkillSwap
         </Link>
       </div>
@@ -59,8 +56,12 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-5">
-        <Link to={'/login'} className="btn bg-[#3DB66F] text-white">Login</Link>
-        <Link to={'/signup'} className="btn  bg-[#3DB66F] text-white">Sign Up</Link>
+        <Link to={"/login"} className="btn bg-[#3DB66F] text-white">
+          Login
+        </Link>
+        <Link to={"/signup"} className="btn  bg-[#3DB66F] text-white">
+          Sign Up
+        </Link>
       </div>
     </div>
   );
