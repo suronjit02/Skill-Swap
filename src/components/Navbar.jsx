@@ -17,7 +17,7 @@ const link = (
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-transparent shadow-sm px-2 sm:px-20">
+    <div className="navbar backdrop-blur-md bg-white/30 sticky top-0 z-50 shadow-sm px-2 sm:px-20">
       <div className="navbar-start">
         {/* Dropdown */}
         <div className="dropdown">
@@ -46,7 +46,12 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link className="btn btn-ghost text-xl font-bold">SkillSwap</Link>
+        <Link
+          to={"/"}
+          className=" text-xl font-bold text-[#3DB66F]"
+        >
+          SkillSwap
+        </Link>
       </div>
 
       <div className="navbar-center hidden lg:flex">
@@ -54,8 +59,8 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-5">
-        <Link className="btn bg-sky-600 text-white">Login</Link>
-        <Link className="btn  bg-sky-600 text-white">Sign Up</Link>
+        <Link className="btn bg-[#3DB66F] text-white">Login</Link>
+        <Link className="btn  bg-[#3DB66F] text-white">Sign Up</Link>
       </div>
     </div>
   );
