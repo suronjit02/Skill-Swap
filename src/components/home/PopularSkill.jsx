@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router";
 
 const PopularSkill = ({ skills }) => {
-  console.log(skills);
+  // console.log(skills);
 
   return (
     <div className="my-40 px-20">

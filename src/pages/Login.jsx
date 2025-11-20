@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
+  const { logIn } = useContext(AuthContext);
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    // console.log("log in clicked");
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    logIn(email, password);
+    e.target.remove;
+  };
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-gray-50">
-      <form className="w-full max-w-md bg-white rounded-md border border-green-200 shadow-md p-8">
+      <form
+        onSubmit={handleLogIn}
+        className="w-full max-w-md bg-white rounded-md border border-green-200 shadow-md p-8"
+      >
         <h2 className="text-2xl font-bold text-center text-[#3DB66F] mb-6">
           Please Login
         </h2>
