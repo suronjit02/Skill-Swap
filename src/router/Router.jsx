@@ -4,7 +4,7 @@ import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
-import SkillDetails from "../pages/SkillDetails";
+import SkillDetails from "../pages/private/SkillDetails";
 
 const router = createBrowserRouter([
   {
