@@ -17,7 +17,7 @@ const link = (
 
 const Navbar = () => {
   return (
-    <div className="navbar backdrop-blur-md bg-white/30 sticky top-0 z-50 shadow-sm px-2 sm:px-20">
+    <div className="navbar backdrop-blur-md bg-white/30 sticky top-0 z-50  px-2 sm:px-20 border-b border-green-200">
       <div className="navbar-start">
         {/* Dropdown */}
         <div className="dropdown">

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const PopularSkill = ({ skills }) => {
   console.log(skills);
@@ -41,9 +42,12 @@ const PopularSkill = ({ skills }) => {
                 </div>
               </div>
 
-              <button className="w-full bg-[#3DB66F] text-white py-2 rounded-md hover:bg-[#2f9c5c] transition-colors">
+              <Link
+                to={`/details/${skill.skillId}`}
+                className="btn w-full bg-[#3DB66F] text-white py-2 rounded-md hover:bg-[#2f9c5c] transition-colors"
+              >
                 View Details
-              </button>
+              </Link>
             </div>
           </div>
         ))}

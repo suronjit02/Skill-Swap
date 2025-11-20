@@ -4,6 +4,7 @@ import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import SkillDetails from "../pages/SkillDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/details/:id",
+        element: <SkillDetails></SkillDetails>,
+        loader: () => fetch("/skills.json"),
       },
     ],
   },
