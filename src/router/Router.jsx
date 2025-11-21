@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import SkillDetails from "../pages/private/SkillDetails";
 import PrivateRoute from "../provider/PrivateRoute";
+import MyProfile from "../pages/private/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,15 @@ const router = createBrowserRouter([
         ),
         loader: () => fetch("/skills.json"),
         hydrateFallbackElement: <p>Loading...</p>,
+      },
+      {
+        path: "/profile",
+
+        element: (
+          <PrivateRoute>
+            <MyProfile></MyProfile>
+          </PrivateRoute>
+        ),
       },
     ],
   },
