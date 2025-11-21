@@ -3,6 +3,8 @@
   themes: light --default, cupcake;
 }
 
-
+a.active{
+  @apply underline;
+}
 
 

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { HiOutlineUserCircle } from "react-icons/hi";
-import { Link } from "react-router";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
