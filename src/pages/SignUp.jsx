@@ -21,7 +21,7 @@ const SignUp = () => {
     createUser(email, password, name, photoUrl)
       .then((result) => {
         console.log(result.user);
-        // navigate("/");
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         setError(error.code);
@@ -32,7 +32,7 @@ const SignUp = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(() => {
-        navigate("/");
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         setError(error.code);

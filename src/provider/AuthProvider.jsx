@@ -13,18 +13,25 @@ import {
 
 export const AuthContext = createContext();
 
+const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+
 const AuthProvider = ({ children }) => {
-  const auth = getAuth(app);
-  const googleProvider = new GoogleAuthProvider();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const createUser = (email, password, name, photoURL) => {
+  const createUser = async (email, password, name, photoURL) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password).then((res) => {
-      // Update name & photo
-      return updateProfile(res.user, { displayName: name, photoURL });
-    });
+
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(res.user, { displayName: name, photoURL });
+
+    await auth.currentUser.reload();
+
+    setUser({ ...auth.currentUser });
+    setLoading(false);
+
+    return res;
   };
 
   const logIn = (email, password) => {

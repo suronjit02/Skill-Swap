@@ -86,12 +86,13 @@ const Navbar = () => {
             >
               <HiOutlineUserCircle className="text-3xl text-gray-700 cursor-pointer" />
             </div>
-            <button
+            <Link
+              to={"/"}
               onClick={handleSignOut}
               className="btn bg-[#3DB66F] text-white"
             >
               Sign Out
-            </button>
+            </Link>
           </>
         ) : (
           <>

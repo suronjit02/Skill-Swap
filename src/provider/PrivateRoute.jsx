@@ -9,10 +9,11 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return <div className="text-center py-20">Loading...</div>;
   }
-  if (user) {
-    return children;
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location.pathname }} />;
   }
-  return <Navigate state={location.pathname} to={"/login"}></Navigate>;
+
+  return children;
 };
 
 export default PrivateRoute;
