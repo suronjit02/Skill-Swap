@@ -84,7 +84,17 @@ const Navbar = () => {
               className="tooltip tooltip-bottom"
               data-tip={user?.displayName || "User"}
             >
-              <HiOutlineUserCircle className="text-3xl text-gray-700 cursor-pointer" />
+              <Link to={"/profile"}>
+                {user?.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt="profile"
+                    className="w-10 h-10 rounded-full object-cover cursor-pointer"
+                  />
+                ) : (
+                  <HiOutlineUserCircle className="text-3xl text-gray-700 cursor-pointer" />
+                )}
+              </Link>
             </div>
             <Link
               to={"/"}
