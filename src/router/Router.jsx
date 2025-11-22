@@ -8,6 +8,7 @@ import SkillDetails from "../pages/private/SkillDetails";
 import PrivateRoute from "../provider/PrivateRoute";
 import MyProfile from "../pages/private/MyProfile";
 import ErrorPage from "../pages/ErrorPage";
+import ForgotPassword from "../pages/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/login/forgot-password",
+        element: <ForgotPassword></ForgotPassword>,
       },
       {
         path: "/signup",

@@ -9,6 +9,7 @@ import {
   signOut,
   updateProfile,
   GoogleAuthProvider,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 export const AuthContext = createContext();
@@ -49,6 +50,10 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  const resetPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser || null);
@@ -56,7 +61,7 @@ const AuthProvider = ({ children }) => {
     });
 
     return () => unsubscribe();
-  }, [auth]);
+  }, []);
 
   const authData = {
     createUser,
@@ -65,6 +70,7 @@ const AuthProvider = ({ children }) => {
     logIn,
     googleLogin,
     loading,
+    resetPassword,
   };
 
   return (

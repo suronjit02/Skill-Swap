@@ -1,12 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { logIn, googleLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [showPass, setShowPass] = useState(false);
+  const [emailInput, setEmailInput] = useState("");
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -53,6 +56,8 @@ const Login = () => {
             <input
               type="email"
               name="email"
+              value={emailInput}
+              onChange={(e) => setEmailInput(e.target.value)}
               placeholder="Email"
               className="input input-bordered focus:outline-none w-full"
             />
@@ -61,17 +66,34 @@ const Login = () => {
           {/* Password */}
           <div className="flex flex-col">
             <label className="font-semibold mb-1">Password</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="input focus:outline-none w-full"
-            />
+            <div className="relative">
+              <input
+                required
+                type={showPass ? "text" : "password"}
+                name="password"
+                placeholder="Password here"
+                className="input input-bordered focus:outline-none w-full pr-10"
+              />
+
+              <span
+                onClick={() => setShowPass(!showPass)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500 z-50"
+              >
+                {showPass ? <FaRegEyeSlash /> : <FaRegEye />}
+              </span>
+            </div>
           </div>
 
           {error && <p className="text-red-600">{error}</p>}
 
-          <p className="text-sm text-[#3DB66F] cursor-pointer text-right hover:underline">
+          <p
+            onClick={() =>
+              navigate("/login/forgot-password", {
+                state: { email: emailInput },
+              })
+            }
+            className="text-sm text-[#3DB66F] cursor-pointer text-right hover:underline"
+          >
             Forgot Password?
           </p>
         </div>
