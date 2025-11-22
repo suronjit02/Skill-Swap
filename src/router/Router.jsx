@@ -7,6 +7,7 @@ import SignUp from "../pages/SignUp";
 import SkillDetails from "../pages/private/SkillDetails";
 import PrivateRoute from "../provider/PrivateRoute";
 import MyProfile from "../pages/private/MyProfile";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             <MyProfile></MyProfile>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },
