@@ -24,15 +24,16 @@ const Login = () => {
       });
   };
 
-  const handleGoogleLogin = (e) => {
-    e.preventDefault();
-
+  const handleGoogleLogin = () => {
     googleLogin()
       .then(() => {
+        // console.log("login user");
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         setError(error.code);
+
+        // console.log(error);
       });
   };
 
@@ -45,7 +46,6 @@ const Login = () => {
         <h2 className="text-2xl font-bold text-center text-[#3DB66F] mb-6">
           Please Login
         </h2>
-
         <div className="flex flex-col gap-4">
           {/* Email */}
           <div className="flex flex-col">
@@ -75,15 +75,14 @@ const Login = () => {
             Forgot Password?
           </p>
         </div>
-
         <button className="btn mt-6 w-full bg-[#3DB66F] text-white hover:bg-[#2f9c5c] transition">
           Login
         </button>
-
         <p className="my-1 text-center">or</p>
 
         {/* google login button */}
         <button
+          type="button"
           onClick={handleGoogleLogin}
           className="btn w-full bg-white text-black border-[#e5e5e5]"
         >

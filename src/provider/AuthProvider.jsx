@@ -7,25 +7,24 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
+  GoogleAuthProvider,
 } from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
+
 export const AuthContext = createContext();
 
-const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
-
 const AuthProvider = ({ children }) => {
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const createUser = (email, password) => {
+  const createUser = (email, password, name, photoURL) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
-  };
-
-  const logOut = () => {
-    setLoading(true);
-    return signOut(auth);
+    return createUserWithEmailAndPassword(auth, email, password).then((res) => {
+      // Update name & photo
+      return updateProfile(res.user, { displayName: name, photoURL });
+    });
   };
 
   const logIn = (email, password) => {
@@ -38,14 +37,19 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+      setUser(currentUser || null);
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [auth]);
 
   const authData = {
     createUser,
@@ -57,9 +61,7 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={authData}>
-      {loading ? <div className="text-center py-20">Loading...</div> : children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>
   );
 };
 

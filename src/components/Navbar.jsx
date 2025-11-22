@@ -1,13 +1,19 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, Navigate, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  // console.log(user);
 
-  const handleSignOUt = () => {
-    logOut();
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        navigate("/", { replace: true });
+      })
+      .catch(() => {});
   };
 
   return (
@@ -74,9 +80,14 @@ const Navbar = () => {
 
         {user ? (
           <>
-            <HiOutlineUserCircle className="text-3xl text-gray-700 cursor-pointer" />
+            <div
+              className="tooltip tooltip-bottom"
+              data-tip={user?.displayName || "User"}
+            >
+              <HiOutlineUserCircle className="text-3xl text-gray-700 cursor-pointer" />
+            </div>
             <button
-              onClick={handleSignOUt}
+              onClick={handleSignOut}
               className="btn bg-[#3DB66F] text-white"
             >
               Sign Out
