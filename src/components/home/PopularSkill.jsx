@@ -6,7 +6,7 @@ const PopularSkill = ({ skills }) => {
   // console.log(skills);
 
   return (
-    <div data-aos="fade-up" className="my-40 px-20">
+    <div data-aos="fade-up" className="my-30 px-20">
       <div className="my-10 text-center">
         <h2 className="text-2xl mb-2 font-semibold text-[#3DB66F] ">
           Popular Skills
