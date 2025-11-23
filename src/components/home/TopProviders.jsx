@@ -12,16 +12,17 @@ const TopProviders = () => {
   }, []);
 
   return (
-    <div data-aos="fade-up" className="mx-20 my-30 ">
-      <h2 className="text-2xl text-center font-semibold text-[#3DB66F] ">
+    <div data-aos="fade-up" className="mx-4 sm:mx-10 lg:mx-20 my-10">
+      <h2 className="text-3xl text-center font-semibold text-[#3DB66F]">
         Top Rated Providers
       </h2>
-      <p className="text-center mb-10">
-        Handpicked instructors, practical learning, and real project
-        guidance— <br />all in one place. Grow your skills the smart way.
+      <p className="text-center mb-6 mt-2">
+        Handpicked instructors, practical learning, and real project guidance—{" "}
+        <br />
+        all in one place. Grow your skills the smart way.
       </p>
 
-      <div className="grid grid-cols-3 gap-5 mt-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
         {providers.map((provider) => (
           <div
             key={provider.id}
@@ -33,10 +34,8 @@ const TopProviders = () => {
                 alt={provider.name}
                 className="w-16 h-16 rounded-full object-cover border"
               />
-
               <div>
                 <h3 className="text-lg font-semibold">{provider.name}</h3>
-
                 <p className="text-sm text-gray-600">
                   ⭐ {provider.rating} / 5 · {provider.reviews} reviews
                 </p>

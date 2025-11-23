@@ -3,21 +3,19 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router";
 
 const PopularSkill = ({ skills }) => {
-  // console.log(skills);
-
   return (
-    <div data-aos="fade-up" className="my-30 px-20">
-      <div className="my-10 text-center">
-        <h2 className="text-2xl mb-2 font-semibold text-[#3DB66F] ">
+    <div data-aos="fade-up" className="my-10 px-4 sm:px-10 lg:px-20">
+      <div className="my-6 text-center">
+        <h2 className="text-2xl mb-2 font-semibold text-[#3DB66F]">
           Popular Skills
         </h2>
         <p>
-          Discover the most sought-after skills in our community. <br /> Whether
-          you want to learn or teach, there's something for everyone.
+          Discover the most sought-after skills in our community. <br />
+          Whether you want to learn or teach, there's something for everyone.
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-5 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {skills.slice(0, 6).map((skill) => (
           <div
             key={skill.skillId}

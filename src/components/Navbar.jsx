@@ -51,7 +51,9 @@ const Navbar = () => {
                   <NavLink to="/profile">Profile</NavLink>
                 </li>
                 <li>
-                  <HiOutlineUserCircle className="text-2xl text-gray-600" />
+                  <Link to={"/"} onClick={handleSignOut} className="">
+                    Sign Out
+                  </Link>
                 </li>
               </>
             )}
@@ -99,7 +101,7 @@ const Navbar = () => {
             <Link
               to={"/"}
               onClick={handleSignOut}
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-md text-[#3DB66F] font-bold btn transition-all duration-300"
+              className="hidden sm:flex items-center justify-center bg-white/20 hover:bg-white/30 backdrop-blur-md text-[#3DB66F] font-bold btn transition-all duration-300"
             >
               Sign Out
             </Link>

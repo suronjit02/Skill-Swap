@@ -13,8 +13,6 @@ const Login = () => {
 
   const handleLogIn = (e) => {
     e.preventDefault();
-    // console.log("log in clicked");
-
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -31,30 +29,26 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(() => {
-        // console.log("login user");
         navigate(`${location.state ? location.state.from : "/"}`);
       })
       .catch((error) => {
         setError(error.code);
-
-        // console.log(error);
       });
   };
 
   return (
     <div
       data-aos="fade-down-left"
-      className="w-full min-h-screen flex items-center justify-center bg-gray-50"
+      className="w-full min-h-screen flex items-center justify-center bg-gray-50 px-4"
     >
       <form
         onSubmit={handleLogIn}
-        className="w-full max-w-md bg-white rounded-md border border-green-200 shadow-md p-8"
+        className="w-full sm:max-w-md bg-white rounded-md border border-green-200 shadow-md p-6 sm:p-8"
       >
-        <h2 className="text-2xl font-bold text-center text-[#3DB66F] mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#3DB66F] mb-6">
           Please Login
         </h2>
         <div className="flex flex-col gap-4">
-          {/* Email */}
           <div className="flex flex-col">
             <label className="font-semibold mb-1">Email</label>
             <input
@@ -67,7 +61,6 @@ const Login = () => {
             />
           </div>
 
-          {/* Password */}
           <div className="flex flex-col">
             <label className="font-semibold mb-1">Password</label>
             <div className="relative">
@@ -78,7 +71,6 @@ const Login = () => {
                 placeholder="Password here"
                 className="input input-bordered focus:outline-none w-full pr-10"
               />
-
               <span
                 onClick={() => setShowPass(!showPass)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500 z-50"
@@ -88,7 +80,7 @@ const Login = () => {
             </div>
           </div>
 
-          {error && <p className="text-red-600">{error}</p>}
+          {error && <p className="text-red-600 text-sm">{error}</p>}
 
           <p
             onClick={() =>
@@ -101,16 +93,16 @@ const Login = () => {
             Forgot Password?
           </p>
         </div>
-        <button className="btn mt-6 w-full bg-[#3DB66F] text-white hover:bg-[#2f9c5c] transition">
+
+        <button className="btn mt-6 w-full bg-[#3DB66F] text-white hover:bg-[#2f9c5c] transition py-2">
           Login
         </button>
-        <p className="my-1 text-center">or</p>
+        <p className="my-1 text-center text-sm">or</p>
 
-        {/* google login button */}
         <button
           type="button"
           onClick={handleGoogleLogin}
-          className="btn w-full bg-white text-black border-[#e5e5e5]"
+          className="btn w-full bg-white text-black border-[#e5e5e5] py-2 flex items-center justify-center gap-2"
         >
           <svg
             aria-label="Google logo"
@@ -142,10 +134,9 @@ const Login = () => {
           Login with Google
         </button>
 
-        <p className="mt-10 text-center text-sm">
+        <p className="mt-6 sm:mt-10 text-center text-sm">
           Don't have an account?{" "}
           <Link to={"/signup"} className="hover:underline text-[#3DB66F]">
-            {" "}
             Sign Up
           </Link>
         </p>

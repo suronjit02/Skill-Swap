@@ -13,7 +13,7 @@ const slides = [swiper1, swiper2, swiper3];
 const HeroSlider = () => {
   return (
     <Swiper
-      className="w-full h-[90vh]"
+      className="w-full h-[60vh] sm:h-[70vh] lg:h-[90vh]"
       modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
@@ -34,7 +34,7 @@ const HeroSlider = () => {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute bottom-15 left-30">
+          <div className="absolute left-1/2 bottom-10 transform -translate-x-1/2 lg:left-10 lg:translate-x-0">
             <button className="bg-white/20 hover:bg-white/30 backdrop-blur-md text-[#3DB66F] font-medium btn transition-all duration-300">
               Explore Skills
             </button>

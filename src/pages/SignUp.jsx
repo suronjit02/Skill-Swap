@@ -10,24 +10,19 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const [showPass, setShowPass] = useState(false);
 
-  console.log(error);
-
   const handleSignUp = (e) => {
     e.preventDefault();
-    // console.log("clicked");
     const name = e.target.name.value;
     const email = e.target.email.value;
     const photoUrl = e.target.photoUrl.value;
     const password = e.target.password.value;
 
     createUser(email, password, name, photoUrl)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         navigate(`${location.state ? location.state.from : "/"}`);
       })
       .catch((error) => {
         setError(error.code);
-        // console.log(error);
       });
   };
 
@@ -38,26 +33,23 @@ const SignUp = () => {
       })
       .catch((error) => {
         setError(error.code);
-
-        // console.log(error);
       });
   };
 
   return (
     <div
       data-aos="fade-down-left"
-      className="w-full min-h-screen py-10 flex items-center justify-center bg-gray-50"
+      className="w-full min-h-screen py-10 flex items-center justify-center bg-gray-50 px-4"
     >
       <form
         onSubmit={handleSignUp}
-        className="w-full max-w-md bg-white rounded-md border border-green-200 shadow-md p-8"
+        className="w-full sm:max-w-md bg-white rounded-md border border-green-200 shadow-md p-6 sm:p-8"
       >
-        <h2 className="text-2xl font-bold text-center text-[#3DB66F] mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#3DB66F] mb-6">
           Please Sign Up
         </h2>
 
         <div className="flex flex-col gap-4">
-          {/* Name */}
           <div className="flex flex-col">
             <label className="font-semibold mb-1">Name</label>
             <input
@@ -68,7 +60,7 @@ const SignUp = () => {
               className="input input-bordered focus:outline-none w-full"
             />
           </div>
-          {/* Photo Url */}
+
           <div className="flex flex-col">
             <label className="font-semibold mb-1">Photo Url</label>
             <input
@@ -78,7 +70,7 @@ const SignUp = () => {
               className="input input-bordered focus:outline-none w-full"
             />
           </div>
-          {/* Email */}
+
           <div className="flex flex-col">
             <label className="font-semibold mb-1">Email</label>
             <input
@@ -90,7 +82,6 @@ const SignUp = () => {
             />
           </div>
 
-          {/* Password */}
           <div className="flex flex-col">
             <label className="font-semibold mb-1">Password</label>
             <div className="relative">
@@ -101,7 +92,6 @@ const SignUp = () => {
                 placeholder="Password here"
                 className="input input-bordered focus:outline-none w-full pr-10"
               />
-
               <span
                 onClick={() => setShowPass(!showPass)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500 z-50"
@@ -112,19 +102,18 @@ const SignUp = () => {
           </div>
         </div>
 
-        {error && <p className="text-red-600">{error}</p>}
+        {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
 
-        <button className="btn mt-6 w-full bg-[#3DB66F] text-white hover:bg-[#2f9c5c] transition">
+        <button className="btn mt-6 w-full bg-[#3DB66F] text-white hover:bg-[#2f9c5c] transition py-2">
           Sign Up
         </button>
 
-        <p className="my-1 text-center">or</p>
+        <p className="my-1 text-center text-sm">or</p>
 
-        {/* google login button */}
         <button
           type="button"
           onClick={handleGoogleLogin}
-          className="btn w-full bg-white text-black border-[#e5e5e5]"
+          className="btn w-full bg-white text-black border-[#e5e5e5] py-2 flex items-center justify-center gap-2"
         >
           <svg
             aria-label="Google logo"
@@ -156,10 +145,9 @@ const SignUp = () => {
           Login with Google
         </button>
 
-        <p className="mt-10 text-center text-sm">
+        <p className="mt-6 sm:mt-10 text-center text-sm">
           Already have an account?{" "}
           <Link to={"/login"} className="hover:underline text-[#3DB66F]">
-            {" "}
             Login
           </Link>
         </p>
