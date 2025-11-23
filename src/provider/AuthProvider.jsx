@@ -23,35 +23,51 @@ const AuthProvider = ({ children }) => {
 
   const createUser = async (email, password, name, photoURL) => {
     setLoading(true);
-
-    const res = await createUserWithEmailAndPassword(auth, email, password);
-    await updateProfile(res.user, { displayName: name, photoURL });
-
-    await auth.currentUser.reload();
-
-    setUser({ ...auth.currentUser });
-    setLoading(false);
-
-    return res;
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(res.user, { displayName: name, photoURL });
+      setUser({ ...res.user });
+      return res;
+    } finally {
+      setLoading(false);
+    }
   };
 
   const logIn = (email, password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password).finally(() =>
+      setLoading(false)
+    );
   };
 
   const googleLogin = () => {
     setLoading(true);
-    return signInWithPopup(auth, googleProvider);
+    return signInWithPopup(auth, googleProvider).finally(() =>
+      setLoading(false)
+    );
   };
 
   const logOut = () => {
     setLoading(true);
-    return signOut(auth);
+    return signOut(auth).finally(() => setLoading(false));
   };
 
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
+  };
+
+  const updateUserProfile = (updates) => {
+    if (!auth.currentUser)
+      return Promise.reject(new Error("No authenticated user"));
+
+    return updateProfile(auth.currentUser, updates)
+      .then(() => {
+        setUser({ ...auth.currentUser });
+        return true;
+      })
+      .catch((error) => {
+        return Promise.reject(error);
+      });
   };
 
   useEffect(() => {
@@ -59,22 +75,25 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser || null);
       setLoading(false);
     });
-
     return () => unsubscribe();
   }, []);
 
-  const authData = {
-    createUser,
-    user,
-    logOut,
-    logIn,
-    googleLogin,
-    loading,
-    resetPassword,
-  };
-
   return (
-    <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>
+    <AuthContext.Provider
+      value={{
+        user,
+        setUser,
+        loading,
+        createUser,
+        logIn,
+        googleLogin,
+        logOut,
+        resetPassword,
+        updateUserProfile,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
   );
 };
 

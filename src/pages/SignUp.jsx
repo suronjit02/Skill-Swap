@@ -1,11 +1,11 @@
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
   const { createUser, googleLogin } = useContext(AuthContext);
-  // const location = useLocation();
+  const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [showPass, setShowPass] = useState(false);
@@ -23,7 +23,7 @@ const SignUp = () => {
     createUser(email, password, name, photoUrl)
       .then((result) => {
         console.log(result.user);
-        navigate(`${location.state ? location.state : "/"}`);
+        navigate(`${location.state ? location.state.from : "/"}`);
       })
       .catch((error) => {
         setError(error.code);
@@ -34,7 +34,7 @@ const SignUp = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(() => {
-        navigate(`${location.state ? location.state : "/"}`);
+        navigate(`${location.state ? location.state.from : "/"}`);
       })
       .catch((error) => {
         setError(error.code);

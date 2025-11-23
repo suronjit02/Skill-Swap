@@ -99,7 +99,7 @@ const Navbar = () => {
             <Link
               to={"/"}
               onClick={handleSignOut}
-              className="btn bg-[#3DB66F] text-white"
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-md text-[#3DB66F] font-bold btn transition-all duration-300"
             >
               Sign Out
             </Link>

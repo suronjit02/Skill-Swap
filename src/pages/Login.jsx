@@ -21,7 +21,7 @@ const Login = () => {
     logIn(email, password)
       .then(() => {
         e.target.reset();
-        navigate(`${location.state ? location.state : "/"}`);
+        navigate(`${location.state ? location.state.from : "/"}`);
       })
       .catch((error) => {
         setError(error.code);
