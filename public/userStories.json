@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Polash PK",
+    "skill": "Guitar Lessons",
+    "quote": "The sessions were super beginner-friendly. I learned chords faster than expected!",
+    "rating": 5,
+    "img": "../src/assets/polash.png"
+  },
+  {
+    "id": 2,
+    "name": "Orin Jahan",
+    "skill": "Spoken English",
+    "quote": "Very friendly instructor. I feel way more confident in conversations now.",
+    "rating": 4,
+    "img": "https://i.postimg.cc/28VwyYz9/user2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Bithi Sutradhar",
+    "skill": "Web Development Basics",
+    "quote": "Loved the teaching style! I finally understand HTML, CSS properly.",
+    "rating": 5,
+    "img": "../src/assets/bithi.jpg"
+  }
+]

@@ -12,7 +12,7 @@ const TopProviders = () => {
   }, []);
 
   return (
-    <div className="mx-20 my-40 ">
+    <div data-aos="fade-up" className="mx-20 my-40 ">
       <h2 className="text-2xl mb-10 text-center font-semibold text-[#3DB66F] ">
         Top Rated Providers
       </h2>

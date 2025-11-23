@@ -4,6 +4,7 @@ import PopularSkill from "../components/home/PopularSkill";
 import { useLoaderData } from "react-router";
 import TopProviders from "../components/home/TopProviders";
 import HowItWorks from "../components/home/HowItWork";
+import UserStories from "../components/home/UserStories";
 
 const Home = () => {
   const skills = useLoaderData();
@@ -16,10 +17,9 @@ const Home = () => {
 
       <main>
         <PopularSkill skills={skills}></PopularSkill>
-
         <TopProviders></TopProviders>
-
         <HowItWorks></HowItWorks>
+        <UserStories></UserStories>
       </main>
     </div>
   );

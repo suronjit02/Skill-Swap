@@ -20,6 +20,7 @@ const Login = () => {
 
     logIn(email, password)
       .then(() => {
+        e.target.reset();
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
@@ -41,7 +42,10 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gray-50">
+    <div
+      data-aos="fade-down-left"
+      className="w-full min-h-screen flex items-center justify-center bg-gray-50"
+    >
       <form
         onSubmit={handleLogIn}
         className="w-full max-w-md bg-white rounded-md border border-green-200 shadow-md p-8"
