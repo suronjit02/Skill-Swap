@@ -32,7 +32,7 @@ const Login = () => {
     googleLogin()
       .then(() => {
         // console.log("login user");
-        navigate(`${location.state ? location.state : "/"}`);
+        navigate(`${location.state ? location.state.from : "/"}`);
       })
       .catch((error) => {
         setError(error.code);
