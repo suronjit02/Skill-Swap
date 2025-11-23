@@ -12,10 +12,14 @@ const TopProviders = () => {
   }, []);
 
   return (
-    <div data-aos="fade-up" className="mx-20 my-40 ">
-      <h2 className="text-2xl mb-10 text-center font-semibold text-[#3DB66F] ">
+    <div data-aos="fade-up" className="mx-20 my-30 ">
+      <h2 className="text-2xl text-center font-semibold text-[#3DB66F] ">
         Top Rated Providers
       </h2>
+      <p className="text-center mb-10">
+        Handpicked instructors, practical learning, and real project
+        guidance— <br />all in one place. Grow your skills the smart way.
+      </p>
 
       <div className="grid grid-cols-3 gap-5 mt-5">
         {providers.map((provider) => (

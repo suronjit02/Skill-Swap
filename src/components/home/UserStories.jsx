@@ -13,8 +13,10 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div data-aos="fade-up" className="my-20 px-4 md:px-10">
-      <h2 className="text-3xl font-bold text-center mb-3">What Learners Say</h2>
+    <div data-aos="fade-up" className="my-20 max-w-6xl mx-auto px-4 md:px-10">
+      <h2 className="text-3xl text-[#3DB66F] font-bold text-center mb-3">
+        What Learners Say
+      </h2>
       <p className="text-center text-gray-600 mb-10">
         Real experiences from SkillSwap learners 💬
       </p>
@@ -24,7 +26,7 @@ const Testimonials = () => {
           <div
             key={story.id}
             data-aos-duration="700"
-            className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border"
+            className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition border"
           >
             <div className="flex items-center gap-4">
               <img

@@ -10,7 +10,10 @@ const HowItWorks = () => {
   return (
     <section data-aos="fade-up" className="py-16 bg-gray-50 pb-20">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-12">How It Works</h2>
+        <h2 className="text-3xl text-[#3DB66F] font-bold mb-12">
+          How It Works
+        </h2>
+        
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Step 1 */}
           <div className="bg-transparent border border-green-200 rounded-lg p-6 hover:shadow-sm transition-shadow duration-300">

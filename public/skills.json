@@ -8,7 +8,7 @@
     "rating": 4.8,
     "slotsAvailable": 3,
     "description": "Learning acoustic guitar as a complete beginner can feel intimidating — from figuring out which chords to start with, understanding strumming patterns, to playing your first song. This Beginner Guitar Lessons course is designed to guide you step by step so that you can comfortably and confidently start your guitar journey. Rafi Ahmed doesn’t just teach chords and strumming; he helps you feel the music. The course begins with understanding the basic anatomy of a guitar, correct posture, and how to hold and balance your hands for smooth play. Finger exercises are provided to build dexterity gradually without causing pain. You will learn open chords like Em, C, G, D, and Am, which form the foundation for countless songs. Rafi teaches chord transitions, strumming rhythms, and simple songs to practice the patterns in real-time. Strumming patterns include downstrokes, upstrokes, pop rhythms, and slow rock rhythms, helping you feel the rhythm naturally. Each class includes small assignments to practice daily for 10-15 minutes, allowing steady progress. In 3–5 weeks, you will be able to play your first complete song, boosting motivation and confidence. This beginner-friendly course eliminates pressure or judgment, letting you learn at your own pace. If you have always wanted to play guitar but were unsure where to start, this course is the perfect stepping stone to get started and enjoy your first song.",
-    "image": "https://picsum.photos/id/1025/800/600",
+    "image": "../src/assets/guitar.jpg",
     "category": "Music"
   },
   {
@@ -20,7 +20,7 @@
     "rating": 4.6,
     "slotsAvailable": 5,
     "description": "Spoken English isn’t learned from books or memorizing grammar — it’s learned by speaking, making mistakes, and improving. This Spoken English Practice course is fully conversation-focused. You will learn real-life English through practical dialogues rather than rigid rules. Sara Hossain, an experienced conversational trainer, knows the common challenges non-native speakers face and ensures a natural, friendly, and judgment-free environment. You will start with self-introductions in different contexts — formal, friendly, interview, or online meetings. Everyday dialogues will cover shopping, ordering food, casual chats with friends, office/class conversations, expressing opinions, and small debates. Practice is twofold: guided conversations where prompts are given, and free conversations to encourage natural speech. Weekly vocabulary themes, idioms, and expressions are introduced in context. Pronunciation and sentence flow are taught for a smooth, native-like sound. Each session includes homework to encourage continuous practice. This course is perfect for learners aiming to confidently speak English in real-life situations without fear or hesitation.",
-    "image": "https://picsum.photos/id/1005/800/600",
+    "image": "../src/assets/spoken.jpg",
     "category": "Language"
   },
   {
@@ -32,7 +32,7 @@
     "rating": 4.9,
     "slotsAvailable": 4,
     "description": "For anyone who wants to learn web development but doesn’t know where to start, this mini-course is perfect. Covering HTML, CSS, and basic JavaScript, the course is beginner-friendly and emphasizes hands-on learning over theory. You’ll first learn how the web works — understanding browsers, servers, domains, and hosting — before diving into HTML. Lessons include creating page structure, headings, paragraphs, images, links, buttons, lists, divs, sections, headers, footers, and basic forms. After each session, you’ll complete small exercises like creating a profile page or product card. The CSS section teaches colors, fonts, margin, padding, flexbox, simple animations, and responsive design with media queries. You’ll build small UI components like nav bars, hero sections, buttons, and grids. In JavaScript, you’ll learn variables, functions, DOM manipulation, click events, input validation, and theme switching. Mini-projects like counters, toggle buttons, and live input displays ensure practical experience. By the end, you’ll build a responsive mini-website combining HTML, CSS, and JS. This course is perfect for beginners who want to start coding immediately and gain confidence in creating basic websites.",
-    "image": "https://picsum.photos/id/1011/800/600",
+    "image": "../src/assets/developer.jpg",
     "category": "Programming"
   },
   {
@@ -44,7 +44,7 @@
     "rating": 4.7,
     "slotsAvailable": 6,
     "description": "This Yoga for Beginners course is designed specifically for newcomers to yoga. There are no advanced or strenuous poses — only gentle flows, smooth movements, and breathing-focused relaxation. If you feel stiffness, back pain, or stress, this course is ideal. You will start with breathing exercises (Pranayama) to calm the mind, improve oxygen flow, and reduce stress. Basic postures include Mountain Pose, Child Pose, Cat-Cow, Downward Dog, and Warrior Pose, each taught step by step with correct posture, common mistakes, and safety tips. Each session includes 5–7 minutes of deep relaxation for mental calmness. Daily 5-minute stretching routines gradually improve flexibility. Lifestyle tips, including the best time to practice, pre/post meal guidance, appropriate mats, and posture tips, are also provided. A bonus session on stress relief uses breathing techniques for anxiety management. This beginner-friendly course offers a slow-paced, judgment-free environment, helping you connect with your body and mind while developing strength, flexibility, and mindfulness.",
-    "image": "https://picsum.photos/id/1012/800/600",
+    "image": "../src/assets/yoga.jpg",
     "category": "Wellness"
   },
   {
@@ -56,8 +56,20 @@
     "rating": 4.5,
     "slotsAvailable": 2,
     "description": "Home cooking can seem simple but is often confusing for beginners — when to add salt, how long to cook, or how to fry spices correctly. This Basic Cooking course is designed for those starting from scratch. Anika Sultana will guide you step by step to prepare easy, delicious meals with simple ingredients. You’ll learn kitchen essentials like cookware usage, basic spice balancing, oil temperature control, and cutting techniques for vegetables. Recipes cover common home meals such as egg dishes, rice and lentils, vegetable stir-fries, chicken or potato curries, noodles, and khichuri. Each recipe includes a time breakdown to ensure proper cooking without overcooking or undercooking. Budget-friendly meals are emphasized, ideal for students, busy individuals, or working people who want nutritious, low-cost meals. Hygiene tips, including cleaning, safe cooking, and storage, are provided. By the end of the course, you will confidently cook daily meals independently, making home cooking easy and enjoyable.",
-    "image": "https://picsum.photos/id/1040/800/600",
+    "image": "../src/assets/cooking.png",
     "category": "Cooking"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Digital Drawing Basics",
+    "providerName": "Tanim Graph",
+    "providerEmail": "tanim@skillswap.com",
+    "price": 22,
+    "rating": 4.9,
+    "slotsAvailable": 3,
+    "description": "Starting digital art can feel challenging, but it’s very approachable with the right guidance. This Digital Drawing Basics course is tailored for beginners using free tools. Tanim Graph introduces the digital canvas, brush settings, pressure sensitivity, and layer system. You will learn shape-based drawing with circles and squares to create body structures and character designs. The course covers body proportions, facial guidelines, eyes, noses, mouths, hairstyles, and clothing shapes. Color theory is taught in a simple way, explaining warm and cool tones, shadows, and highlights. Free tools like Krita, Medibang, and Ibis Paint are used, and step-by-step instructions are provided. Daily small assignments include eye sketches, hand sketches, face sketches, and full-body illustrations. By the end, you will complete a full character illustration, ready to showcase your digital art skills.",
+    "image": "../src/assets/drawing.jpg",
+    "category": "Art"
   },
   {
     "skillId": 6,
@@ -70,18 +82,6 @@
     "description": "This course is ideal for non-native speakers, travelers, or anyone who understands Bengali but cannot speak it confidently. Rumana Begum begins with pronunciation basics — vowels, consonants, and common word sounds. You will learn simple everyday phrases such as ‘I want…’, ‘How are you?’, and ‘My name is…’. Daily-life conversation exercises include shopping, taking transport, asking directions, and ordering food. Politeness and tone are taught according to Bengali cultural norms. The course provides a zero-judgment environment where making mistakes is normal, and corrections are gently guided. Weekly vocabulary themes include food, travel, people, and places. In the final week, short conversation role-plays are conducted to develop fluency. By the end, beginners can confidently engage in basic Bengali conversations in real-life situations.",
     "image": "https://picsum.photos/id/1027/800/600",
     "category": "Language"
-  },
-  {
-    "skillId": 7,
-    "skillName": "Digital Drawing Basics",
-    "providerName": "Tanim Graph",
-    "providerEmail": "tanim@skillswap.com",
-    "price": 22,
-    "rating": 4.9,
-    "slotsAvailable": 3,
-    "description": "Starting digital art can feel challenging, but it’s very approachable with the right guidance. This Digital Drawing Basics course is tailored for beginners using free tools. Tanim Graph introduces the digital canvas, brush settings, pressure sensitivity, and layer system. You will learn shape-based drawing with circles and squares to create body structures and character designs. The course covers body proportions, facial guidelines, eyes, noses, mouths, hairstyles, and clothing shapes. Color theory is taught in a simple way, explaining warm and cool tones, shadows, and highlights. Free tools like Krita, Medibang, and Ibis Paint are used, and step-by-step instructions are provided. Daily small assignments include eye sketches, hand sketches, face sketches, and full-body illustrations. By the end, you will complete a full character illustration, ready to showcase your digital art skills.",
-    "image": "https://picsum.photos/id/1003/800/600",
-    "category": "Art"
   },
   {
     "skillId": 8,
