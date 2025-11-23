@@ -17,6 +17,15 @@ const SignUp = () => {
     const photoUrl = e.target.photoUrl.value;
     const password = e.target.password.value;
 
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+    if (!passwordRegex.test(password)) {
+      setError(
+        "Password must be at least 6 characters long and include both uppercase and lowercase letters"
+      );
+      return;
+    }
+
     createUser(email, password, name, photoUrl)
       .then(() => {
         navigate(`${location.state ? location.state.from : "/"}`);
@@ -91,6 +100,7 @@ const SignUp = () => {
                 name="password"
                 placeholder="Password here"
                 className="input input-bordered focus:outline-none w-full pr-10"
+                onChange={() => setError("")}
               />
               <span
                 onClick={() => setShowPass(!showPass)}

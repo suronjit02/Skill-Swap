@@ -21,16 +21,20 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const createUser = async (email, password, name, photoURL) => {
+  const createUser = (email, password, name, photoURL) => {
     setLoading(true);
-    try {
-      const res = await createUserWithEmailAndPassword(auth, email, password);
-      await updateProfile(res.user, { displayName: name, photoURL });
-      setUser({ ...res.user });
-      return res;
-    } finally {
-      setLoading(false);
-    }
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        return updateProfile(res.user, { displayName: name, photoURL }).then(
+          () => {
+            setUser({ ...res.user });
+            return res;
+          }
+        );
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const logIn = (email, password) => {
