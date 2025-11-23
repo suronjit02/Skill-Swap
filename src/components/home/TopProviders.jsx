@@ -4,7 +4,7 @@ const TopProviders = () => {
   const [providers, setProviders] = useState([]);
 
   useEffect(() => {
-    fetch("/providers.json")
+    fetch("providers.json")
       .then((res) => res.json())
       .then((data) => {
         setProviders(data);

@@ -6,11 +6,9 @@ import Router from "./router/Router";
 import { Toaster } from "react-hot-toast";
 import AuthProvider from "./provider/AuthProvider";
 
-// ⭐ AOS import
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// ⭐ Global initialization
 AOS.init({
   duration: 1000,
   once: false,

@@ -4,9 +4,9 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import swiper1 from "../../assets/swiper1.jpg";
-import swiper2 from "../../assets/swiper2.jpg";
-import swiper3 from "../../assets/swiper3.jpg";
+import swiper1 from "../../../public/assets/swiper1.jpg";
+import swiper2 from "../../../public/assets/swiper1.jpg";
+import swiper3 from "../../../public/assets/swiper1.jpg";
 
 const slides = [swiper1, swiper2, swiper3];
 

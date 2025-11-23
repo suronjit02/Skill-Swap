@@ -20,8 +20,8 @@ const SkillDetails = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      {/* Skill Info + Image */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Skill info + image */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         <div className="md:col-span-1">
           <h1 className="text-2xl sm:text-3xl font-bold mb-3">
             {skill.skillName}
@@ -57,7 +57,7 @@ const SkillDetails = () => {
         </div>
       </section>
 
-      {/* Description + Booking Form */}
+      {/* Description + booking form */}
       <section className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-6">
         <p className="text-gray-700 mb-4 md:col-span-2 text-justify text-sm sm:text-base">
           {skill.description}

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Suronjit Sutradhar",
-    "photo": "../src/assets/suronjit.jpg",
+    "photo": "assets/suronjit.jpg",
     "skill": "Guitar Tutor",
     "rating": 4.9,
     "reviews": 120
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "name": "Nusrat Akter",
-    "photo": "../src/assets/nusrat.jpeg",
+    "photo": "assets/nusrat.jpeg",
     "skill": "Spoken English Coach",
     "rating": 4.8,
     "reviews": 98
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "name": "Al Mamun",
-    "photo": "../src/assets/mamun.jpg",
+    "photo": "assets/mamun.jpg",
     "skill": "Graphic Designer",
     "rating": 4.7,
     "reviews": 140
