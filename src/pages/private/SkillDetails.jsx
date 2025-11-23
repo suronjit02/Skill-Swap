@@ -11,10 +11,9 @@ const SkillDetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success("🎉 Session booked successfully!", {
+    toast.success("Session booked successfully! 🎉", {
       duration: 4000,
       style: { padding: "10px", borderRadius: "5px", width: "100%" },
-      icon: "",
     });
     e.target.reset();
   };
