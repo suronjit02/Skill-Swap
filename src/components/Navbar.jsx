@@ -123,7 +123,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/signup"
-              className="btn bg-[#3DB66F] text-white hidden sm:block"
+              className="btn bg-[#3DB66F] text-white hidden sm:flex items-center justify-center"
             >
               Sign Up
             </Link>

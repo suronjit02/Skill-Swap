@@ -1,16 +1,78 @@
-# React + Vite
+# SkillSwap – A Local Skill Exchange Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page web application where users can offer, learn, and exchange skills within their local community.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Live Demo
 
-## React Compiler
+👉 **Live URL:** https://skillswap-88219.web.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Project Purpose
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+SkillSwap is a platform where people in a local area can share their skills or learn new skills from others.  
+Examples: guitar lessons, language practice, coding help, yoga training, etc.
+
+---
+
+## Key Features
+
+### Authentication
+
+- Email & Password Login
+- Signup with Name, Email, Photo URL
+- Social Login (Google Authentication)
+- Protected Routes (cannot access without login)
+- Forgot Password with Email Reset
+- Password Validation (Uppercase, Lowercase, 6+ characters)
+
+### Navigation
+
+- Dynamic Navbar
+- User Avatar (hover shows displayName)
+- Login / Signup / Logout buttons
+- SPA (Single Page Application) → No errors on page reload
+
+### Home Page Sections
+
+- Hero Slider (Swiper / DaisyUI)
+- Popular Skills Section (Cards)
+- "Top Rated Providers" Section
+- "How It Works" Section
+- "What Learners Say" Section
+
+### Skill Listings
+
+- 6 JSON skill items
+- Each card shows: image, skill name, rating, price
+- View Details button
+
+### Skill Details Page
+
+- Protected page (Login required)
+- Shows all JSON data fields
+- “Book Session” Form
+- Submission shows a success toast
+
+### My Profile Page
+
+- User Name
+- Email
+- Photo
+- Update Profile button (update Name & Photo)
+
+---
+
+## Tech Stack
+
+- **React.js**
+- **React Router**
+- **Firebase Authentication**
+- **Tailwind CSS / DaisyUI**
+- **Swiper.js**
+- **React Hot Toast**
+- **AOS Package**
+
+---
