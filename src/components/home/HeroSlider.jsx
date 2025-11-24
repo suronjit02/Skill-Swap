@@ -1,8 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import swiper1 from "../../../public/assets/swiper1.jpg";
 import swiper2 from "../../../public/assets/swiper1.jpg";
@@ -13,12 +12,11 @@ const slides = [swiper1, swiper2, swiper3];
 const HeroSlider = () => {
   return (
     <Swiper
-      className="w-full h-[60vh] sm:h-[70vh] lg:h-[90vh]"
-      modules={[Navigation, Pagination, Autoplay]}
+      className="w-full h-[25vh] sm:h-[35vh] md:h-[55vh] lg:h-[75vh] xl:h-[90vh]"
+      modules={[Pagination, Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
       pagination={{ clickable: true }}
-      navigation
       loop={true}
       autoplay={{
         delay: 2500,
@@ -31,14 +29,8 @@ const HeroSlider = () => {
           <img
             src={img}
             alt={`slide-${index}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain sm:object-cover"
           />
-
-          <div className="absolute left-1/2 bottom-10 transform -translate-x-1/2 lg:left-10 lg:translate-x-0">
-            <button className="bg-white/20 hover:bg-white/30 backdrop-blur-md text-[#3DB66F] font-medium btn transition-all duration-300">
-              Explore Skills
-            </button>
-          </div>
         </SwiperSlide>
       ))}
     </Swiper>
