@@ -44,6 +44,16 @@ const Navbar = () => {
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
+            {!user && (
+              <div>
+                <li>
+                  <NavLink to="/login">Login</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/signup">Sign Up</NavLink>
+                </li>
+              </div>
+            )}
 
             {user && (
               <>
@@ -111,7 +121,10 @@ const Navbar = () => {
             <Link to="/login" className="btn bg-[#3DB66F] text-white">
               Login
             </Link>
-            <Link to="/signup" className="btn bg-[#3DB66F] text-white">
+            <Link
+              to="/signup"
+              className="btn bg-[#3DB66F] text-white hidden sm:block"
+            >
               Sign Up
             </Link>
           </>
