@@ -60,8 +60,8 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link to="/" className="text-xl font-bold text-[#3DB66F]">
-          SkillSwap
+        <Link to="/" className="rammetto-font text-xl font-bold text-[#3DB66F]">
+          SKILLSWAP
         </Link>
       </div>
 
